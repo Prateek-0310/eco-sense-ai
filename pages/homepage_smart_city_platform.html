@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoSense AI - Transform Your City Into an Intelligent Environmental Ecosystem</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Smart City Environmental Technology Platform - Transform cities into data-driven, environmentally conscious communities through IoT innovation and citizen engagement." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fecosensea8730back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L8 8v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V8l-8-6z"/>
+                        <circle cx="16" cy="12" r="3" fill="white"/>
+                        <path d="M12 18h8v2h-8z" fill="white"/>
+                    </svg>
+                    <span class="text-xl font-bold text-primary">EcoSense AI</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage_smart_city_platform.html" class="text-primary font-semibold">Home</a>
+                    <a href="smart_collection_solutions.html" class="text-text-secondary hover:text-primary transition-quick">Smart Collection</a>
+                    <a href="citizen_engagement_platform.html" class="text-text-secondary hover:text-primary transition-quick">Citizen Engagement</a>
+                    <a href="customer_impact_stories.html" class="text-text-secondary hover:text-primary transition-quick">Impact Stories</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-text-secondary hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="homepage_smart_city_platform.html" class="text-primary font-semibold">Home</a>
+                    <a href="smart_collection_solutions.html" class="text-text-secondary hover:text-primary transition-quick">Smart Collection</a>
+                    <a href="citizen_engagement_platform.html" class="text-text-secondary hover:text-primary transition-quick">Citizen Engagement</a>
+                    <a href="customer_impact_stories.html" class="text-text-secondary hover:text-primary transition-quick">Impact Stories</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Adaptive Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <!-- User Type Selection -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-surface rounded-lg p-2 shadow-sm border border-gray-200">
+                    <div class="flex space-x-2">
+                        <button id="municipality-btn" class="px-4 py-2 rounded-md text-sm font-medium bg-primary text-white transition-quick">Municipality</button>
+                        <button id="corporate-btn" class="px-4 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-primary transition-quick">Corporate</button>
+                        <button id="citizen-btn" class="px-4 py-2 rounded-md text-sm font-medium text-text-secondary hover:text-primary transition-quick">Citizen</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight">
+                        Transform Your City Into an 
+                        <span class="text-primary">Intelligent Environmental</span> 
+                        Ecosystem
+                    </h1>
+                    <p class="text-xl text-text-secondary mb-8 leading-relaxed">
+                        Revolutionize waste management through IoT innovation, citizen engagement, and data-driven insights that deliver measurable environmental impact and operational excellence.
+                    </p>
+
+                    <!-- Dynamic CTAs based on user type -->
+                    <div id="cta-container" class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="smart_collection_solutions.html" class="btn-primary text-center">Optimize Operations</a>
+                        
+                        <a href="citizen_engagement_platform.html" class="btn-accent text-center">Engage Citizens</a>
+                    </div>
+                </div>
+
+                <!-- Real-time Metrics Dashboard -->
+                <div class="bg-surface rounded-xl shadow-lg p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-text-primary mb-6 text-center">Live Impact Metrics</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2" id="waste-counter">0</div>
+                            <div class="text-sm text-text-secondary">Tons Waste Diverted</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-success mb-2" id="co2-counter">0</div>
+                            <div class="text-sm text-text-secondary">CO₂ Emissions Reduced (tons)</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-accent mb-2 break-words max-w-xs mx-auto" id="savings-counter">₹0</div>
+                            <div class="text-sm text-text-secondary">Cost Savings</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <div class="text-sm text-text-secondary">Across <span class="font-semibold text-primary">47 cities</span> in India</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive City Deployment Map -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Deployment Network</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Discover how cities are transforming their environmental impact through our intelligent platform</p>
+            </div>
+
+            <!-- Interactive Map Container -->
+            <div class="relative bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 mb-12">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- City Deployment Cards -->
+                    <div class="city-card bg-surface rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-lg transition-standard cursor-pointer" data-city="Delhi">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-success rounded-full mr-2"></div>
+                            <h4 class="font-semibold text-text-primary">Delhi</h4>
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <div>Waste Reduced: <span class="font-semibold text-primary">23%</span></div>
+                            <div>Cost Savings: <span class="font-semibold text-accent">₹21,00,00,000</span></div>
+                        </div>
+                    </div>
+
+                    <div class="city-card bg-surface rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-lg transition-standard cursor-pointer" data-city="Chandigarh">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-success rounded-full mr-2"></div>
+                            <h4 class="font-semibold text-text-primary">Chandigarh</h4>
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <div>Waste Reduced: <span class="font-semibold text-primary">31%</span></div>
+                            <div>Cost Savings: <span class="font-semibold text-accent">₹1,87,00,200</span></div>
+                        </div>
+                    </div>
+
+                    <div class="city-card bg-surface rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-lg transition-standard cursor-pointer" data-city="Indore">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-success rounded-full mr-2"></div>
+                            <h4 class="font-semibold text-text-primary">Indore</h4>
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <div>Waste Reduced: <span class="font-semibold text-primary">28%</span></div>
+                            <div>Cost Savings: <span class="font-semibold text-accent">₹32,00,00,000</span></div>
+                        </div>
+                    </div>
+
+                    <div class="city-card bg-surface rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-lg transition-standard cursor-pointer" data-city="Jamshedpur">
+                        <div class="flex items-center mb-3">
+                            <div class="w-3 h-3 bg-success rounded-full mr-2"></div>
+                            <h4 class="font-semibold text-text-primary">Jamshedpur</h4>
+                        </div>
+                        <div class="text-sm text-text-secondary">
+                            <div>Waste Reduced: <span class="font-semibold text-primary">26%</span></div>
+                            <div>Cost Savings: <span class="font-semibold text-accent">₹19,00,00,000</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three-Pillar Value Proposition -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Three Pillars of Smart City Transformation</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">Comprehensive solutions that address every aspect of modern waste management</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Smart Collection Pillar -->
+                <div class="pillar-card bg-surface rounded-xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-standard">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-3">Smart Collection</h3>
+                        <p class="text-text-secondary mb-6">IoT sensors and AI-powered route optimization reduce operational costs by up to 40%</p>
+                    </div>
+                    
+                    <div class="expandable-content" id="smart-collection-content">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary">Real-time Fill Monitoring</h4>
+                                    <p class="text-sm text-text-secondary">Smart sensors track bin levels and optimize collection schedules</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary">Dynamic Route Optimization</h4>
+                                    <p class="text-sm text-text-secondary">AI algorithms reduce fuel consumption and vehicle wear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button class="expand-btn w-full text-primary font-semibold hover:text-primary-600 transition-quick" data-target="smart-collection-content">
+                            Learn More ↓
+                        </button>
+                        <a href="smart_collection_solutions.html" class="btn-primary w-full mt-4 text-center block">Explore Solutions</a>
+                    </div>
+                </div>
+
+                <!-- Citizen Engagement Pillar -->
+                <div class="pillar-card bg-surface rounded-xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-standard">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.99 2.99 0 0 0 17.09 7H14.9c-1.3 0-2.4.84-2.82 2.01L9.54 16H12v6h8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-3">Citizen Engagement</h3>
+                        <p class="text-text-secondary mb-6">Mobile app and gamification increase participation rates by 65%</p>
+                    </div>
+                    
+                    <div class="expandable-content hidden" id="citizen-engagement-content">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary">Gamified Recycling</h4>
+                                    <p class="text-sm text-text-secondary">Reward systems and leaderboards motivate sustainable behavior</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></div>
+                                <div>
+                                    <h4 class="font-semibold text-text-primary">Community Challenges</h4>
+                                    <p class="text-sm text-text-secondary">Neighborhood competitions drive collective environmental action</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button class="expand-btn w-full text-secondary font-semibold hover:text-secondary-700 transition-quick" data-target="citizen-engagement-content">
+                            Learn More ↓
+                        </button>
+                        <a href="https://wastetrack-pro.vercel.app" class="btn-secondary w-full mt-4 text-center block" target="_blank" rel="noopener">Explore Platform</a>
+                    </div>
+                </div>
+
+                <!-- EPR Compliance Pillar -->
+                <!-- ...existing code... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Widget -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">Calculate Your Potential Savings</h2>
+                <p class="text-xl text-text-secondary">Discover the financial impact of implementing EcoSense AI in your city</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Input Section -->
+                    <div>
+                        <h3 class="text-xl font-bold text-text-primary mb-6">City Information</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Population</label>
+                                <input type="number" id="population" class="input-field" placeholder="e.g., 500000" value="500000" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Current Annual Waste Budget ($)</label>
+                                <input type="number" id="budget" class="input-field" placeholder="e.g., 5000000" value="5000000" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Number of Collection Vehicles</label>
+                                <input type="number" id="vehicles" class="input-field" placeholder="e.g., 50" value="50" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div>
+                        <h3 class="text-xl font-bold text-text-primary mb-6">Projected Annual Savings</h3>
+                        <div class="space-y-4">
+                            <div class="bg-surface rounded-lg p-4 border border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-text-secondary">Operational Cost Reduction</span>
+                                    <span class="text-2xl font-bold text-primary" id="operational-savings">₹0</span>
+                                </div>
+                                <div class="text-sm text-text-secondary mt-1">25-40% reduction in collection costs</div>
+                            </div>
+                            <div class="bg-surface rounded-lg p-4 border border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-text-secondary">Fuel Savings</span>
+                                    <span class="text-2xl font-bold text-success" id="fuel-savings">₹0</span>
+                                </div>
+                                <div class="text-sm text-text-secondary mt-1">30% reduction in fuel consumption</div>
+                            </div>
+                            <div class="bg-surface rounded-lg p-4 border border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-text-secondary">Total Annual Savings</span>
+                                    <span class="text-3xl font-bold text-accent" id="total-savings">₹0</span>
+                                </div>
+                                <div class="text-sm text-text-secondary mt-1">ROI typically achieved within 18 months</div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="platform_demo_center.html" class="btn-primary w-full text-center">Get Detailed Analysis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Carousel -->
+    <!-- ...existing code... -->
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Transform Your City?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Join the growing network of smart cities leveraging EcoSense AI to create sustainable, efficient, and engaged communities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- ...existing code... -->
+                <a href="customer_impact_stories.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-quick">View Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L8 8v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V8l-8-6z"/>
+                            <circle cx="16" cy="12" r="3" fill="white"/>
+                            <path d="M12 18h8v2h-8z" fill="white"/>
+                        </svg>
+                        <span class="text-xl font-bold">EcoSense AI</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Transforming cities into intelligent environmental ecosystems through IoT innovation and citizen engagement.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-quick">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-quick">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solutions -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="smart_collection_solutions.html" class="text-gray-400 hover:text-primary transition-quick">Smart Collection</a></li>
+                        <li><a href="citizen_engagement_platform.html" class="text-gray-400 hover:text-primary transition-quick">Citizen Engagement</a></li>
+                        <li><a href="platform_demo_center.html" class="text-gray-400 hover:text-primary transition-quick">Platform Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="customer_impact_stories.html" class="text-gray-400 hover:text-primary transition-quick">Success Stories</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-quick">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-quick">API Reference</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-400 hover:text-primary transition-quick">Support Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">sales@ecosenseai.com</li>
+                        <li class="text-gray-400">+1 (555) 123-4567</li>
+                        <li class="text-gray-400">Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© 2025 EcoSense AI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // User type selection
+        const userTypeButtons = document.querySelectorAll('#municipality-btn, #corporate-btn, #citizen-btn');
+        userTypeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                userTypeButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('text-text-secondary');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('bg-primary', 'text-white');
+                this.classList.remove('text-text-secondary');
+                
+                // Update CTAs based on selection
+                updateCTAs(this.id);
+            });
+        });
+
+        function updateCTAs(userType) {
+            const ctaContainer = document.getElementById('cta-container');
+            let ctaHTML = '';
+            
+            switch(userType) {
+                case 'municipality-btn':
+                    ctaHTML = `
+                        <a href="smart_collection_solutions.html" class="btn-primary text-center">Optimize Operations</a>
+                        <!-- ...existing code... -->
+                    `;
+                    break;
+                case 'corporate-btn':
+                    ctaHTML = `
+                        
+                        <a href="platform_demo_center.html" class="btn-secondary text-center">Get Started</a>
+                    `;
+                    break;
+                case 'citizen-btn':
+                    ctaHTML = `
+                        <a href="citizen_engagement_platform.html" class="btn-primary text-center">Join Community</a>
+                        <a href="customer_impact_stories.html" class="btn-secondary text-center">See Impact</a>
+                    `;
+                    break;
+            }
+            ctaContainer.innerHTML = ctaHTML;
+        }
+
+        // Animated counters
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        }
+
+        // Initialize counters
+        window.addEventListener('load', function() {
+            animateCounter(document.getElementById('waste-counter'), 125847);
+            animateCounter(document.getElementById('co2-counter'), 89234);
+            
+            const savingsElement = document.getElementById('savings-counter');
+            let start = 0;
+            const targetUSD = 47500000;
+            const targetINR = Math.floor(targetUSD * 88.17);
+            const increment = targetINR / 125;
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= targetINR) {
+                    savingsElement.textContent = '₹' + targetINR.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    savingsElement.textContent = '₹' + Math.floor(start).toLocaleString();
+                }
+            }, 16);
+        });
+
+        // Expandable content functionality
+        document.querySelectorAll('.expand-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    this.textContent = 'Show Less ↑';
+                } else {
+                    content.classList.add('hidden');
+                    this.textContent = 'Learn More ↓';
+                }
+            });
+        });
+
+        // ROI Calculator
+        function calculateROI() {
+            const population = parseInt(document.getElementById('population').value) || 0;
+            const budget = parseInt(document.getElementById('budget').value) || 0;
+            const vehicles = parseInt(document.getElementById('vehicles').value) || 0;
+
+            // Calculate savings in USD, then convert to INR (1 USD = 88.17 INR)
+            const operationalSavingsUSD = budget * 0.32; // 32% average savings
+            const fuelSavingsUSD = vehicles * 15000 * 0.30; // $15k avg fuel cost per vehicle, 30% savings
+            const totalSavingsUSD = operationalSavingsUSD + fuelSavingsUSD;
+
+            const operationalSavingsINR = Math.floor(operationalSavingsUSD * 88.17);
+            const fuelSavingsINR = Math.floor(fuelSavingsUSD * 88.17);
+            const totalSavingsINR = Math.floor(totalSavingsUSD * 88.17);
+
+            document.getElementById('operational-savings').textContent = '₹' + operationalSavingsINR.toLocaleString();
+            document.getElementById('fuel-savings').textContent = '₹' + fuelSavingsINR.toLocaleString();
+            document.getElementById('total-savings').textContent = '₹' + totalSavingsINR.toLocaleString();
+        }
+
+        // Update ROI calculation on input change
+        document.querySelectorAll('#population, #budget, #vehicles').forEach(input => {
+            input.addEventListener('input', calculateROI);
+        });
+
+        // Initialize ROI calculation
+        calculateROI();
+
+        // Testimonial carousel
+        let currentTestimonial = 0;
+        const testimonialTrack = document.getElementById('testimonial-track');
+        const totalTestimonials = 2;
+
+        function showTestimonial(index) {
+            const offset = -index * 100;
+            testimonialTrack.style.transform = `translateX(${offset}%)`;
+        }
+
+        document.getElementById('next-testimonial').addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        });
+
+        document.getElementById('prev-testimonial').addEventListener('click', function() {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        });
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        }, 8000);
+
+        // City card hover effects
+        document.querySelectorAll('.city-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const cityName = this.getAttribute('data-city');
+                // Could add more interactive features here
+            });
+        });
+    </script>
+</body>
+</html>
