@@ -1,21 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <title>wastetrack-pro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="manifest" href="/manifest.json" />
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fwastetrack8861back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoSense AI - Smart Environmental Solutions</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .redirect-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #00ff88;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .redirect-text {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fecosensea8730back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div class="dhiwise-code" id="root"></div>
-  <script type="module" src="/src/index.jsx"></script>
-</body>
+    <div class="redirect-container">
+        <div class="logo">EcoSense AI</div>
+        <div class="tagline">Smart Environmental Solutions for a Sustainable Future</div>
+        <div class="loading-spinner"></div>
+        <div class="redirect-text">Redirecting to Smart City Platform...</div>
+    </div>
 
+    <script>
+        // Redirect to the homepage smart city platform after 2 seconds
+        setTimeout(function() {
+            window.location.href = 'pages/homepage_smart_city_platform.html';
+        }, 2000);
+        
+        // Fallback redirect in case of any issues
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                    window.location.replace('pages/homepage_smart_city_platform.html');
+                }
+            }, 3000);
+        });
+    </script>
+</body>
 </html>
